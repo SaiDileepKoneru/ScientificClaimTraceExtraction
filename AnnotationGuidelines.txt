@@ -1,0 +1,53 @@
+Guidelines for Annotation
+Correctness based on two main aspects:
+
+Relation: If the extracted sentence is a finding related to the hypothesis but focuses on presenting results instead of predictions, and the link is clear, it should be considered closely related and rated higher (e.g., 4).
+Completeness: Are significant details omitted or included? If the extracted finding or hypothesis adds unrelated or new information to the human annotation, lower the score (e.g., 2 or 1). The more complete the extracted sentence, the higher the score. 
+
+
+Scoring:
+1.	Exact Match (Score: 3)
+The extracted sentence conveys the same meaning and includes all key details.
+
+Semantic Similarity: The extracted sentence is exact or nearly identical to the human-annotated sentence. The meaning is preserved completely.
+Depth of Detail: Both sentences present the same level of detail, including all key elements.
+Example (from SCORE rubric):\\
+    Human Annotation: ``Desegregation is more likely where political conditions are favorable.''\\
+	Model Extracted: ``Desegregation is more likely where political conditions are favorable.''
+
+
+2.	Mostly Similar, Some Difference in Detail (Score: 2) The sentence captures the main idea with slight differences in detail or form, or expresses a related finding that clearly supports the hypothesis.
+ 
+ Semantic Similarity: The extracted sentence conveys the same meaning as the human-annotated sentence, but with different phrasing or structure.
+ Depth of Detail: The extracted sentence may omit minor details, but the core information is preserved.
+ Hypothesis vs. Finding: If the extracted sentence is a finding that directly answers or supports the human-annotated hypothesis, consider it equivalent.
+ Example (VXAD):\\
+
+Human: ``In line with the theoretical model, multilevel multivariate analyses have revealed that the higher the degree of bargaining centralization, the stronger the correlation of deregulation and commodification measures with insider/outsider disparities.''
+Extracted: ``The higher the degree of bargaining centralization, the stronger the correlation of deregulation and commodification measures with insider/outsider disparities.''
+
+
+
+3.	Partial Similarity (Score: 1)
+The sentence includes some relevant information but either omits essential parts or introduces unrelated content.
+
+Semantic Similarity: The extracted sentence covers part of the information but adds or omits some important aspects.
+Depth of Detail: The extracted sentence lacks key details or adds more details from the human annotation.
+Example (P8L8):
+
+Human: ``school quality and educational stratification contribute substantially to explaining country variation in training returns.''
+Extracted: ``Cross-country training rates are positively related to the share of workers in jobs that typically require a qualification at the tertiary level (skill demand indicator), and the Pearson correlation coefficient of 0.76 indicates a strong relationship.''
+
+
+
+4.	Different or Completely Unrelated (Score: 0)
+The sentence does not reflect the meaning or intent of the annotated claim.
+
+
+Semantic Similarity: The extracted sentence conveys a different meaning or presents a  claim unrelated to the human-annotated sentence.
+
+
+Example (JPRQ):
+
+Human: ``In this study, we found that science gaps by gender and race/ethnicity tended to remain stable or narrow as students progressed through elementary and middle school.''
+Extracted: ``Our key predictors include a vector of gender and race/ethnicity indicator variables.''

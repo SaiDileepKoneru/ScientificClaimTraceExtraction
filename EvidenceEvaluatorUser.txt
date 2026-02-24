@@ -1,0 +1,80 @@
+\begin{tcolorbox}[breakable,colback=black!5!white,colframe=blue!75!blue,title=Evidence evaluation prompt: Variables (set overlap)]
+Question: Compare the variables found in the following two pieces of evidence:
+- Ground-Truth Evidence: \{ground\_truth\_evidence\}
+- Extracted Evidence: \{extracted\_evidence\}
+
+Return JSON with:
+- sizeA: number of variables in Ground-Truth
+- sizeB: number of variables in Extracted Evidence
+- intersection: number of variables common in both (use fuzzy matching)
+- explanation: brief explanation
+
+If no variables are present, return size=0.
+
+Answer:
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,colback=black!5!white,colframe=blue!75!blue,title=Evidence evaluation prompt: Effect relationships (set overlap)]
+Question: Compare the effect relationships (e.g., effect direction, significance) found in the following two pieces of evidence:
+- Ground-Truth Evidence: \{ground\_truth\_evidence\}
+- Extracted Evidence: \{extracted\_evidence\}
+
+Return JSON with:
+- sizeA: number of relationships in Ground-Truth
+- sizeB: number of relationships in Extracted Evidence
+- intersection: number of relationships common in both (use fuzzy matching)
+- explanation: short explanation
+
+If no relationships are present, return size=0.
+
+Answer:
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,colback=black!5!white,colframe=blue!75!blue,title=Evidence evaluation prompt: Confidence intervals (set overlap)]
+Question: Compare the confidence intervals found in the following two pieces of evidence:
+- Ground-Truth Evidence: \{ground\_truth\_evidence\}
+- Extracted Evidence: \{extracted\_evidence\}
+
+Return JSON with:
+- sizeA: number of confidence intervals in Ground-Truth
+- sizeB: number of confidence intervals in Extracted Evidence
+- intersection: number of confidence intervals common in both (use fuzzy matching; allow rounding/format differences)
+- explanation: short explanation
+
+If no confidence intervals are present, return size=0.
+
+Answer:
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=black!5!white,colframe=blue!75!blue,title=Evidence evaluation prompt: Statistical test / model family (binary match)]
+Question: Compare the statistical tests found in the following two pieces of evidence:
+- Ground-Truth Evidence: \{ground\_truth\_evidence\}
+- Extracted Evidence: \{extracted\_evidence\}
+
+Return JSON with:
+- match: 1 if statistical test is the same, else 0
+- gold\_test: test name in Ground-Truth (empty string if absent)
+- predicted\_test: test name in Extracted Evidence (empty string if absent)
+- explanation: short explanation
+
+If neither mentions a test, set gold\_test=``'' and predicted\_test=``'' and match=0.
+
+Answer:
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,colback=black!5!white,colframe=blue!75!blue,title=Evidence evaluation prompt: Sample size / degrees of freedom (binary match)]
+Question: Compare the sample size and degrees of freedom found in the following two pieces of evidence:
+- Ground-Truth Evidence: \{ground\_truth\_evidence\}
+- Extracted Evidence: \{extracted\_evidence\}
+
+Return JSON with:
+- match: 1 if both sample size and df match, else 0
+- gold\_sample: sample/df in Ground-Truth (empty string if absent)
+- predicted\_sample: sample/df in Extracted Evidence (empty string if absent)
+- explanation: short explanation
+
+If neither mentions sample/df, set gold\_sample=``'' and predicted\_sample=``'' and match=0.
+
+Answer:
+\end{tcolorbox}

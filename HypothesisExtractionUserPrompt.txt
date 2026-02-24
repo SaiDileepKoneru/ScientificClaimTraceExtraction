@@ -1,0 +1,8 @@
+Abstract Finding ($F_A$):\\
+\$\abstract\_finding\
+
+Article Text to Analyze (Context $C_1$):\\
+\$\context\
+
+
+Task: Extract one or more Hypothesis\_Statement sentences (full sentences, verbatim) from the Article Text that best correspond to $F_A$, following the rules above.

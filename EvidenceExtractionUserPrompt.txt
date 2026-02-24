@@ -1,0 +1,13 @@
+Abstract Finding ($F_A$):\\
+\$\abstract\_finding\
+
+
+Hypothesis ($H$):\\
+\$\hypothesis\
+
+
+Article Text to Analyze (Context $C_2$):\\
+\$\context\
+
+
+Task: Extract one or more Result\_Statement sentences (full sentences, verbatim) from the Article Text that support $H$ and align with $F_A$, following the rules above.
